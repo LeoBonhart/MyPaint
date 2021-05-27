@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~scss-mixin-leobonhart/mixins.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$tooltip_bgColor: rgb(97,97,97);
+$tooltip_textColor: rgb(255, 255, 255);
+.tooltips {
+	font-family: $fontFamily_Material;
+	font-weight: 500;
+	font-size: 12px;
+	text-align: center;
+	background-color: $tooltip_bgColor;
+	opacity: 0.9;
+	height: auto;
+	color: $tooltip_textColor;
+	border-radius: 2px;
+	line-height: 16px;
+	position: fixed;
+    z-index: $max-z-index;
+    max-width: 300px;
+    word-break: break-all;
+    word-break: break-word;
+    padding: {
+        top: 4px;
+        left: 8px;
+        right: 8px;
+        bottom: 4px;
+    };
+    &[data-direction="top"]{
+        animation-name: tooltipInTop;
+    }
+    &[data-direction="left"]{
+        animation-name: tooltipInLeft;
+    }
+    &[data-direction="right"]{
+        animation-name: tooltipInRight;
+    }
+    &[data-direction="bottom"]{
+        animation-name: tooltipInBot;
+    }
+	animation-duration: $transitionDur;
+	animation-fill-mode: forwards;
+}
+
+@keyframes tooltipInTop {
+	0% {
+		opacity: 0;
+		transform: scale(0.85) translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1)  translateY(0px);
+	}
+}
+@keyframes tooltipInBot {
+	0% {
+		opacity: 0;
+		transform: scale(0.85) translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1)  translateY(0px);
+	}
+}
+@keyframes tooltipInLeft {
+	0% {
+		opacity: 0;
+		transform: scale(0.85) translateX(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1)  translateX(0px);
+	}
+}
+@keyframes tooltipInRight{
+	0% {
+		opacity: 0;
+		transform: scale(0.85) translateX(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1)  translateX(0px);
+	}
+}

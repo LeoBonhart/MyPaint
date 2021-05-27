@@ -1,0 +1,16 @@
+form{
+    display: flex;
+    .setting-cell{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        padding: 10px;
+        & > label{
+            color: rgba(0,0,0,.54);
+            font-size: 11px;
+        }
+        &:nth-child(2) {
+            width: 90px;
+        }
+    }
+}

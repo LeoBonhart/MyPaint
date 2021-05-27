@@ -1,0 +1,10 @@
+:host{
+    display: flex;
+    flex-direction: column;
+}
+canvas{
+    $borderSize: 2px;
+    width: calc(100% - #{($borderSize * 2)});
+    height: 600px;
+    border: $borderSize solid #ccc;
+}
